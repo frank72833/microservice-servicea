@@ -7,7 +7,6 @@ option objc_class_prefix = "RTG";
 
 package person;
 
-// Interface exported by the server.
 service Person {
   rpc GetPersonById(PersonRequestId) returns (PersonReply) {}
   rpc GetPersonByCarId(PersonRequestCarId) returns (stream PersonReply) {}
