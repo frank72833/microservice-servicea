@@ -1,2 +1,2 @@
 # microservice-servicea
-Microservice Exercise service A
+Microservice Exercise service B
