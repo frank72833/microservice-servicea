@@ -3,13 +3,13 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "com.example.servicea.person";
 option java_outer_classname = "PersonProto";
-option objc_class_prefix = "RTG";
+option objc_class_prefix = "PER";
 
 package person;
 
-service Person {
-  rpc GetPersonById(PersonRequestId) returns (PersonReply) {}
-  rpc GetPersonByCarId(PersonRequestCarId) returns (stream PersonReply) {}
+service PersonService {
+  rpc GetPersonById(PersonRequestId) returns (PersonResponse) {}
+  rpc GetPersonByCarId(PersonRequestCarId) returns (stream PersonResponse) {}
 }
 
 message PersonRequestId {
@@ -20,7 +20,7 @@ message PersonRequestCarId {
   string carId = 1;
 }
 
-message PersonReply {
+message PersonResponse {
   string id = 1;
   string name = 2;
   string surname = 3;
