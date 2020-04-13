@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.servicea.person";
+option java_outer_classname = "PersonProto";
+option objc_class_prefix = "RTG";
+
+package person;
+
+// Interface exported by the server.
+service Person {
+  rpc GetPersonById(PersonRequestId) returns (PersonReply) {}
+  rpc GetPersonByCarId(PersonRequestCarId) returns (stream PersonReply) {}
+}
+
+message PersonRequestId {
+  string id = 1;
+}
+
+message PersonRequestCarId {
+  string carId = 1;
+}
+
+message PersonReply {
+  string id = 1;
+  string name = 2;
+  string surname = 3;
+  string carId = 4;
+}
